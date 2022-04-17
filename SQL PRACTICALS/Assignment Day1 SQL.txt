@@ -1,0 +1,158 @@
+//1. Create table std
+
+create table Std
+(
+  Enrollment int primary key,
+  Lastname varchar(255),
+  Firstname varchar(255),
+  Grade int 
+  );
+
+//2. Insert data into std
+
+insert into std(enrollment,firstname,lastname,grade) values(123,'Debdip','Sarkar',6);
+insert into std(enrollment,firstname,lastname,grade) values(456,'Pritam','Singh',7);
+insert into std(enrollment,firstname,lastname,grade) values(153,'Rohan','Kumar',8);
+insert into std(enrollment,firstname,lastname,grade) values(183,'Vandana','Kumari',9);
+insert into std(enrollment,firstname,lastname,grade) values(223,'Milan','Saha',4);
+insert into std(enrollment,firstname,lastname,grade) values(323,'Michael','Clarke',5);
+
+//3. Add column city to std
+
+alter table std add  city varchar2(200);
+
+//4. Display data from table std
+
+select * from std;
+
+//5. Performing operations using where clause
+
+select * from std where firstname='Vandana';
+select * from std where enrollment = 123;
+select * from std where lastname='Kumari';
+
+//6. Update cities of respective students in std table
+
+update std set city = 'Kolkata' where firstname='Debdip';
+update std set city = 'Delhi' where firstname='Vandana';
+update std set city = 'Kanpur' where firstname='Michael';
+update std set city = 'Hyderabad' where firstname='Pritam';
+update std set city = 'Secunderabad' where firstname='Rohan';
+update std set city = 'Bangalore' where firstname='Milan';
+
+//7. Using and and , not  in sql
+
+select * from std where city = 'Kolkata' and city ='Bangalore';
+
+select * from std where not city = 'Bangalore'
+
+select * from std order by city desc;
+
+//8. Delete command in sql
+
+Delete from std where grade = 5;
+
+select * from std;
+
+//9. Top 2 records from std table
+
+select * from std where rownum < 3;
+
+//10. Using like operator
+
+select * from std where firstname like '%i%'
+
+//11. Using count function
+
+select count(grade) from std;
+
+//12. Using wildcards in sql
+
+select * from std where firstname like 'D%' and lastname like '%r';
+
+select * from std where firstname like 'D%p';
+
+select * from std where firstname not like '%[aeiouAEIOU]';
+
+select * from std where firstname like 'R[a-z][a-z][a-z]n';
+
+select * from std where lastname like 'a@z';
+
+select * from std where firstname like 'a?d';
+
+select * from emp;
+
+//13. Using in and not in in sql
+ 
+select * from emp where job in('SALESMAN','CLERK');
+
+select * from emp where mgr in(7902,7698);
+
+select * from emp where mgr not in(7902,7698);
+
+//14. Using between in sql
+
+select ename from emp where sal between 2000 and 10000;
+
+//15. Display records from emp table
+
+select * from emp;
+
+//16. Display records from dept table
+
+select * from dept;
+
+//17. Joining in sql
+
+select e.ename,d.loc from emp e, dept d where e.deptno=d.deptno;
+
+//18. Create table EmployeeDetails
+
+create table EmployeeDetails(
+ empid int primary key,
+ fullname varchar2(200),
+ managerid int,
+ dateofjoining date,
+ city varchar2(200)
+);
+
+//19. Insert data into EmployeeDetails
+
+insert into employeedetails(empid,fullname,managerid,dateofjoining,city) values(121,'John Snow',321,'01/31/2014','Toronto');
+insert into employeedetails(empid,fullname,managerid,dateofjoining,city) values(321,'Walter White',986,'01/30/2015','California');
+insert into employeedetails(empid,fullname,managerid,dateofjoining,city) values(421,'Kuldeep Rana',876,'11/27/2016','New Delhi');
+
+//20. Create table EmployeeSalary
+
+create table Employeesalary(
+  empid int references EmployeeDetails(empid),
+  project varchar2(20),
+  salary numeric,
+  variable numeric
+);
+
+//21. Insert data into EmployeeSalary
+
+insert into employeesalary(empid,pRoject,salary,variable) values(121,'P1',8000,500);
+insert into employeesalary(empid,pRoject,salary,variable) values(321,'P2',10000,1000);
+insert into employeesalary(empid,pRoject,salary,variable) values(421,'P1',12000,0);
+
+//22. Diaplay data from EmployeeDetails
+
+select * from employeedetails;
+
+//23. Display data from EmployeeSalary
+
+select * from employeesalary;
+
+//24. Fetch duplicate records from EmployeeDetails
+
+select fullname,empid from employeedetails group by fullname,empid having count(*)>1;
+
+//25. Fetch odd number of rows from EmployeeDetails
+
+select * from(select empid,fullname,managerid,dateofjoining,city, rownum rn from employeedetails order by empid) where mod(rn,2) <> 0;
+
+//26. Fetch 3rd Highest Salary from EmployeeSalary
+
+select max(salary) from employeesalary where salary <(select max(salary) from employeesalary where salary <(select max(salary) from employeesalary));
