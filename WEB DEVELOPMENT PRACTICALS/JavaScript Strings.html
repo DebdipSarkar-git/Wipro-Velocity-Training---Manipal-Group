@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Strings</title>
+    </head>
+    <body>
+        <h1> Let's see how it is declared</h1>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2"></p>
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+        <script>
+            //String Search 
+            let str = "Hi my name is Debdip";
+            document.getElementById("demo").innerHTML=str.indexOf("Debdip");
+            
+            //String Slice
+            let s = "Debdip, Abhirup, Soumarya";
+            document.getElementById("demo1").innerHTML=str.slice(7, 13);
+            
+            //Substring
+            let s1 ="Debdip Abhirup Soumarya";
+            document.getElementById("demo2").innerHTML = str.substring(6,11);
+            
+            //String Replace
+            let text = "Hi my name is Debdip";
+            document.getElementById("demo3").innerHTML =text.replace("Debdip","Abhirup");
+           
+            //String UpperCase
+           let t = "Hi my name is Debdip";
+           document.getElementById("demo4").innerHTML =t.toUpperCase();
+           
+           //String LowerCase
+           let t1 = "Hi my name is Debdip";
+           document.getElementById("demo5").innerHTML =t.toLowerCase();
+           
+           //String match
+           let t2 = "Hi I am Debdip";
+           let result = t2.match("Deb");
+           document.getElementById("demo6").innerHTML = result+" is there in the String.";
+           
+           //String Padding at the beginning
+           let t3 = "7";
+           document.getElementById("demo7").innerHTML = t3.padStart(4,"x");
+           
+           //String Padding at the end
+           let t4 = "7";
+           document.getElementById("demo8").innerHTML = t4.padEnd(4,"x");
+
+
+        </script> 
+    </body>
+</html>

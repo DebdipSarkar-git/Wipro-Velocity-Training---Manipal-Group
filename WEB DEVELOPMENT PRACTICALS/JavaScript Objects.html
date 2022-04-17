@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects</title>
+</head>
+<body>
+    <h2>JavaScript</h2>
+    <p>We want to create JavaScript Objects</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        const student={
+            name : "Debdip",
+            lname : "Sarkar",
+            grade : "O"
+        };
+        const st={
+            name : "Abhriup",
+            lname : "Ghosh",
+            grade : "A+"
+        };
+        function add(a,b){
+            return a+b;
+        }
+        document.getElementById("demo").innerHTML=student.name+" "+student.lname+" is a very good boy having "+student.grade+" grade.";
+        document.getElementById("demo1").innerHTML=st.name+" "+st.lname+" is a very good boy having "+st.grade+" grade.";
+        document.getElementById("demo2").innerHTML=add(1,10);
+        var as= window.prompt("Enter your name");
+        document.write("My name is "+as);
+    </script>
+</body>
+</html>

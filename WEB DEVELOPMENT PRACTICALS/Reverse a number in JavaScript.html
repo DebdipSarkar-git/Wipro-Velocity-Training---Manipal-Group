@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reverse a number</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <script>
+            let rev = 0;
+            let n = 56423;
+            let r;
+            while(n != 0){
+	          r = n % 10;
+              rev = rev * 10 + r;
+              n = Math.floor(n/10);
+           }
+           document.getElementById("demo").innerHTML="Reverse of the number 56423 is : "+rev;
+        </script>
+       
+    </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Array</title>
+</head>
+<body>
+    <h2>JavaScript</h2>
+    <p>We want to create an array</p>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <p id="demo3"></p>
+    <p id="demo4"></p>
+    <p id="demo5"></p>
+    <p id="demo6"></p>
+    
+    <script>
+        const name=["Debdip","Abhirup","Soumarya","Subhasis"];
+        document.getElementById("demo").innerHTML=name;
+
+        const f=["Debdip","Abhirup","Soumarya","Subhasis"];
+        document.getElementById("demo1").innerHTML=f.join("*");
+
+        const p=["Debdip","Abhirup","Soumarya","Subhasis"];
+        p.pop();
+        document.getElementById("demo2").innerHTML=p;
+
+        const r=["Debdip","Abhirup","Soumarya","Subhasis"];
+        r.push("Sreyashi");
+        document.getElementById("demo3").innerHTML=r;
+
+        const s=["Debdip","Abhirup","Soumarya","Subhasis"];
+        s.shift();
+        document.getElementById("demo4").innerHTML=s;
+
+        const u=["Debdip","Abhirup","Soumarya","Subhasis"];
+        u.unshift("Sarfaraz");
+        document.getElementById("demo5").innerHTML=u;
+        
+        const sl=["Debdip","Abhirup","Soumarya","Subhasis"];
+        const su = sl.slice(1,3);
+        document.getElementById("demo6").innerHTML=su;
+    </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Date Operations</title>
+    </head>
+    <body>
+        <p id="demo"></p>
+        <p id="demo1"></p>
+        <p id="demo2">
+        <p id="demo3"></p>
+        <p id="demo4"></p>
+        <p id="demo5"></p>
+        <p id="demo6"></p>
+        <p id="demo7"></p>
+        <p id="demo8"></p>
+        <button onclick="displayDate()">Date</button>
+
+        <script>
+            
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d.getTime();
+
+            const d1 = new Date();
+            document.getElementById("demo1").innerHTML = d.getFullYear();
+
+            const d2 = new Date();
+            document.getElementById("demo2").innerHTML = d.getMonth() + 1;
+
+            const d3 = new Date();
+           document.getElementById("demo3").innerHTML = d.getHours();
+
+           const d4 = new Date();
+           document.getElementById("demo4").innerHTML = d.getDay();
+           
+           const d5 = new Date("04/13/2022");
+           document.getElementById("demo5").innerHTML = d;
+
+           const d6 = new Date();
+           document.getElementById("demo6").innerHTML = d.getMinutes();
+
+           const d7 = new Date();
+           document.getElementById("demo7").innerHTML = d.getSeconds();
+
+           const  d8 = new Date(2022,04,13,10,33,30);
+           document.getElementById("demo8").innerHTML=d8.toUTCString();
+           document.getElementById("demo9").innerHTML=d8.toISOString();
+
+           function displayDate(){
+                document.getElementById("demo8").innerHTML=Date();
+            }
+        </script>
+    </body>
+</html>
